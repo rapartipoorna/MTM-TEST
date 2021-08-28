@@ -9,7 +9,7 @@ passport.use(
         {
             clientID: keys.clientID,
             clientSecret: keys.clientSecret,
-            callbackURL: "https://dashboard.heroku.com/auth/google/callback"
+            callbackURL: "https://mtmdashboard.herokuapp.com/auth/google/callback"
         },
         async function(accessToken, refreshToken, profile, done){
             Student.findOne({email:profile.emails[0].value},async (err,student)=>{
