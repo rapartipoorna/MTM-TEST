@@ -3,7 +3,7 @@ module.exports = {
     clientSecret: "bBBbBew7mdGeN7Oyd0efFD9p",
     mongoURI: "mongodb+srv://PR-Test:poorna9666@test.cpqoh.mongodb.net/education?retryWrites=true&w=majority",
     sessionSecret: "abc2",
-    PORT:"https://dashboard.heroku.com"
+    PORT:"https://mtmdashboard.herokuapp.com"
   };
   
 // Super User Details :- 
