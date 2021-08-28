@@ -9,7 +9,7 @@ passport.use(
         {
             clientID: keys.clientID,
             clientSecret: keys.clientSecret,
-            callbackURL: "http://localhost:3000/auth/google/callback"
+            callbackURL: "https://dashboard.heroku.com/auth/google/callback"
         },
         async function(accessToken, refreshToken, profile, done){
             Student.findOne({email:profile.emails[0].value},async (err,student)=>{
