@@ -79,7 +79,7 @@ app.get("/",(req,res)=>{
 app.use("/student", student);
 app.use("/teacher", teacher);
 app.use("/superuser", superuser);
-app.use("https://mtmdashboard.herokuapp.com/auth", authRoutes);
+app.use("/auth", authRoutes);
 
 io.on('connection',(socket)=>{
     console.log("New Web Socket Connection");
