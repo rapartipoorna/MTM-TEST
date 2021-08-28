@@ -1,6 +1,6 @@
 module.exports = {
-    clientID: "160174807802-rn22k2niqljh75hi308v7ctji379cbef.apps.googleusercontent.com",
-    clientSecret: "bBBbBew7mdGeN7Oyd0efFD9p",
+    clientID: "574995825216-3mbsshsj33lfhlk57j7cuvhe7iqndg5c.apps.googleusercontent.com",
+    clientSecret: "rIVOS1TzSz3YVvSLFqi9GQSl",
     mongoURI: "mongodb+srv://PR-Test:poorna9666@test.cpqoh.mongodb.net/education?retryWrites=true&w=majority",
     sessionSecret: "abc2",
     // PORT:"https://mtmdashboard.herokuapp.com"

@@ -14,7 +14,7 @@ router.get(
 );
 console.log("gmail")
 router.get("/google/callback",
-passport.authenticate("google", { failureRedirect: "https://mtmdashboard.herokuapp.com/" }),
+passport.authenticate("google", { failureRedirect: "/" }),
     (req,res)=>{
        console.log(req.user)
        req.session.token=req.user.accessToken[req.user.accessToken.length - 1];
