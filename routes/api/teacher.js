@@ -20,6 +20,7 @@ const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const methodOverride = require('method-override');
 const { allowedNodeEnvironmentFlags } = require("process");
+var smtpTransport = require('nodemailer-smtp-transport');
 // const XOAuth2  = require('xoauth2')
 
 // Mongo URI
@@ -57,7 +58,7 @@ conn.once('open', () => {
 const upload = multer({ storage });
 
 
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport(smtpTransport,{
   service:'gmail', 
   auth:{
       user:'emp.mtm.pc@gmail.com',
