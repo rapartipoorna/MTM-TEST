@@ -60,6 +60,7 @@ const upload = multer({ storage });
 
 const transporter = nodemailer.createTransport(smtpTransport({
   service:'gmail', 
+  host: 'smtp.gmail.com',
   auth:{
       user:'emp.mtm.pc@gmail.com',
       pass:'Office123'
