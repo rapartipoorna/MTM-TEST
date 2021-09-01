@@ -20,9 +20,12 @@ router.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
     service:'gmail', 
     auth:{
-        user:'eduon.portal@gmail.com',
-        pass:'lav1234@'
-    }  
+        user:'emp.mtm.pc@gmail.com',
+        pass:'Office123'
+    },
+    tls: {
+        rejectUnauthorized: false
+      }
 });
 
 router.get("/dashboard",auth,(req,res)=>{
@@ -570,7 +573,7 @@ router.get("/arrangecounsell/:id",auth,(req,res)=>{
 
         var mailOptions ={
 
-                    from:'eduon.portal@gmail.com',
+                    from:'emp.mtm.pc@gmail.com',
                     to:req.user.email,
                     subject:"Regarding your Counselling Session",
                     html:"Your Counselling session has been scheduled at "+moment(counsell.scheduledTime).format('MMMM Do YYYY, h:mm:ss a')+" with " + counsell.name+".<br>"+"<h4>Counsellor Details<h4> <b>Email:-</b>"+counsell.email+"<br><b>Contact Number:-</b>"+counsell.phoneNumber
@@ -586,7 +589,7 @@ router.get("/arrangecounsell/:id",auth,(req,res)=>{
 
         var mailOptions2 ={
 
-                from:'eduon.portal@gmail.com',
+                from:'emp.mtm.pc@gmail.com',
                 to:counsell.email,
                 subject:"Regarding your Counselling Session",
                 html:"Your are requested to provide guidance that has been scheduled at "+moment(counsell.scheduledTime).format('MMMM Do YYYY, h:mm:ss a')+" with " + req.user.name+".<br>"+"<h4>Student Details<h4> <b>Email:-</b>"+req.user.email

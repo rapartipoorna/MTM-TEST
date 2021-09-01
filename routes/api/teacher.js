@@ -57,11 +57,14 @@ const upload = multer({ storage });
 
 
 const transporter = nodemailer.createTransport({
-    service:'gmail', 
-    auth:{
-        user:'eduon.portal@gmail.com',
-        pass:'lav1234@'
-    }   
+  service:'gmail', 
+  auth:{
+      user:'emp.mtm.pc@gmail.com',
+      pass:'Office123'
+  } ,
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -219,7 +222,7 @@ router.get("/dashboard/meeting/sendmail/:roomid/:email",auth,(req,res)=>{
         }else if(req.params.email == meeting.email){
             meeting.students.forEach((stud)=>{
                 var mailOptions ={
-                    from:'eduon.portal@gmail.com',
+                    from:'emp.mtm.pc@gmail.com',
                     to:stud,
                     subject:"Hi , testing purpose",
                     html:"<h2>Notification for Test</h2> " +
@@ -393,7 +396,7 @@ router.get("/dashboard/discussion/sendemail/:roomid/:email",auth,(req,res)=>{
           await discussion.students.forEach((stud)=>{
 
               var mailOptions ={
-                    from:'eduon.portal@gmail.com',
+                    from:'emp.mtm.pc@gmail.com',
                     to:stud.email,
                     subject:"Hi , testing purpose",
                     html:"<h2>Notification for Discussion</h2> " +
