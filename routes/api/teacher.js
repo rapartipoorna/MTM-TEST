@@ -20,7 +20,7 @@ const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const methodOverride = require('method-override');
 const { allowedNodeEnvironmentFlags } = require("process");
-const XOAuth2  = require('xoauth2')
+// const XOAuth2  = require('xoauth2')
 
 // Mongo URI
 const mongoURI = keys.mongoURI;
@@ -57,30 +57,30 @@ conn.once('open', () => {
 const upload = multer({ storage });
 
 
-// const transporter = nodemailer.createTransport({
-//   service:'gmail', 
-//   auth:{
-//       user:'emp.mtm.pc@gmail.com',
-//       pass:'Office123'
-//   } ,
-//   tls: {
-//     rejectUnauthorized: false
-//   }
-// });
-
-const transporter =  nodemailer.createTransport("SMTP",{
-
-  service: "Gmail",
-  auth: {
-    XOAuth2: {
-      user: "emp.mtm.pc@gmail.com", // Your gmail address.
-                                            // Not @developer.gserviceaccount.com
-      clientId: "574995825216-3mbsshsj33lfhlk57j7cuvhe7iqndg5c.apps.googleusercontent.com",
-      clientSecret: "rIVOS1TzSz3YVvSLFqi9GQSl"
-    }
+const transporter = nodemailer.createTransport({
+  service:'gmail', 
+  auth:{
+      user:'emp.mtm.pc@gmail.com',
+      pass:'Office123'
+  } ,
+  tls: {
+    rejectUnauthorized: false
   }
+});
 
-})
+// const transporter =  nodemailer.createTransport("SMTP",{
+
+//   service: "Gmail",
+//   auth: {
+//     XOAuth2: {
+//       user: "emp.mtm.pc@gmail.com", // Your gmail address.
+//                                             // Not @developer.gserviceaccount.com
+//       clientId: "574995825216-3mbsshsj33lfhlk57j7cuvhe7iqndg5c.apps.googleusercontent.com",
+//       clientSecret: "rIVOS1TzSz3YVvSLFqi9GQSl"
+//     }
+//   }
+
+// })
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
