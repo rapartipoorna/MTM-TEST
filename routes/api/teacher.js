@@ -62,9 +62,9 @@ const transporter = nodemailer.createTransport({
       user:'emp.mtm.pc@gmail.com',
       pass:'Office123'
   } ,
-  // tls: {
-  //   rejectUnauthorized: false
-  // }
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 router.use(bodyParser.urlencoded({ extended: true }));
