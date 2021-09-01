@@ -64,10 +64,10 @@ const transporter = nodemailer.createTransport(smtpTransport({
   auth:{
       user:'emp.mtm.pc@gmail.com',
       pass:'Office123'
-  } ,
-  tls: {
-    rejectUnauthorized: false
-  }
+  } 
+  // tls: {
+  //   rejectUnauthorized: false
+  // }
 }));
 
 // const transporter =  nodemailer.createTransport("SMTP",{
