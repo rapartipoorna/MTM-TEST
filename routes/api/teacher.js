@@ -58,9 +58,8 @@ conn.once('open', () => {
 const upload = multer({ storage });
 
 
-const transporter = nodemailer.createTransport(smtpTransport({
-  service:'gmail', 
-  host: 'smtp.gmail.com',
+const transporter = nodemailer.createTransport({
+  service:'gmail',
   auth:{
       user:'emp.mtm.pc@gmail.com',
       pass:'Office123'
@@ -68,7 +67,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
   // tls: {
   //   rejectUnauthorized: false
   // }
-}));
+});
 
 // const transporter =  nodemailer.createTransport("SMTP",{
 
